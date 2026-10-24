@@ -12,6 +12,10 @@ A responsive personal developer portfolio for Ruthwik Vutukuri, built with seman
 
 Open `index.html` in a browser.
 
+## Live site
+
+After enabling GitHub Pages for this repository, visit: https://vutukuriruthwik25-byte.github.io/devfolio/
+
 ## Contact
 
 - Email: [vutukuri.ruthwik25@gmail.com](mailto:vutukuri.ruthwik25@gmail.com)
