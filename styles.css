@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
+
+:root {
+  color-scheme: light;
+  --brand: #6846d8;
+  --brand-dark: #4d31b4;
+  --ink: #242238;
+  --muted: #77758b;
+  --paper: #fbfaff;
+  --surface: #ffffff;
+  --line: #e9e6f2;
+  --mint: #d8f2e8;
+  --peach: #ffeadf;
+  --lilac: #e9e1ff;
+  --font-body: "DM Sans", Arial, sans-serif;
+  --font-display: "Manrope", "DM Sans", sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+button, a { -webkit-tap-highlight-color: transparent; }
+
+.site-header, .site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.35rem clamp(1.25rem, 6vw, 6rem);
+}
+.site-header { border-bottom: 1px solid var(--line); }
+.brand { font: 800 1.75rem/1 var(--font-display); letter-spacing: -0.08em; }
+.brand span, .accent { color: var(--brand); }
+nav { display: flex; align-items: center; gap: clamp(1.2rem, 3vw, 2.7rem); font-size: .9rem; font-weight: 600; }
+nav a, .social-links a, .site-footer a { transition: color .2s ease; }
+nav a:hover, .social-links a:hover, .site-footer a:hover { color: var(--brand); }
+.nav-contact { color: var(--brand); }
+
+.hero { min-height: 620px; padding: clamp(5rem, 11vw, 9.5rem) clamp(1.25rem, 12vw, 12rem) 2rem; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; }
+.hero::after { content: ""; position: absolute; width: 360px; height: 360px; border: 1px solid #ddd4ff; border-radius: 50%; right: 7%; top: 18%; box-shadow: 0 0 0 42px rgba(233,225,255,.28), 0 0 0 84px rgba(233,225,255,.18); z-index: -1; }
+.eyebrow, .section-label, .project-meta, .hero-note { text-transform: uppercase; letter-spacing: .12em; font-size: .72rem; font-weight: 700; color: var(--muted); }
+.eyebrow { display: flex; align-items: center; gap: .65rem; margin: 0 0 1.8rem; }
+.status-dot { width: 8px; height: 8px; border-radius: 50%; background: #59b58e; box-shadow: 0 0 0 4px #dff3e9; }
+h1, h2, h3, p { margin-top: 0; }
+h1, h2, h3 { font-family: var(--font-display); }
+h1 { max-width: 850px; margin-bottom: 1.4rem; font-size: clamp(3.15rem, 7.2vw, 6.6rem); line-height: 1.04; letter-spacing: -.075em; }
+.hero-copy { max-width: 510px; color: var(--muted); font-size: clamp(1rem, 1.6vw, 1.2rem); }
+.hero-actions { display: flex; align-items: center; gap: 2rem; margin-top: 1.5rem; }
+.button { display: inline-flex; align-items: center; gap: .8rem; border-radius: 999px; padding: .85rem 1.25rem; font-weight: 700; font-size: .88rem; }
+.button-primary { color: #fff; background: var(--brand); box-shadow: 0 10px 24px rgba(104,70,216,.2); }
+.button-primary:hover { background: var(--brand-dark); transform: translateY(-1px); }
+.text-link, .project-link { font-weight: 700; font-size: .88rem; }
+.hero-note { display: flex; justify-content: space-between; margin-top: clamp(4rem, 10vw, 8rem); padding-top: 1rem; border-top: 1px solid var(--line); }
+.section-shell { padding: clamp(4.5rem, 9vw, 8rem) clamp(1.25rem, 10vw, 10rem); border-top: 1px solid var(--line); }
+.section-label { display: flex; gap: .75rem; align-items: center; }
+.section-label span { color: var(--brand); }
+.about-content { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(2.5rem, 8vw, 8rem); margin-top: 2.8rem; }
+h2 { font-size: clamp(2.4rem, 5vw, 4.7rem); line-height: 1.08; letter-spacing: -.07em; margin-bottom: 0; }
+.muted { color: #aaa7bb; }
+.about-details { max-width: 540px; color: var(--muted); }
+.about-details p { margin-bottom: 1.1rem; }
+.skill-list { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: 1.6rem; }
+.skill-list span { border: 1px solid var(--line); border-radius: 999px; padding: .35rem .75rem; color: var(--ink); font-size: .76rem; font-weight: 600; }
+.projects-heading { display: flex; justify-content: space-between; align-items: end; gap: 2rem; margin: 2.5rem 0 3rem; }
+.projects-heading h2 { margin-top: 1rem; }
+.projects-heading > p { max-width: 280px; margin-bottom: .35rem; color: var(--muted); }
+.project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5rem 1.5rem; }
+.project-card { min-width: 0; }
+.project-featured { grid-row: span 2; }
+.project-visual { min-height: 260px; border-radius: 18px; display: grid; place-items: center; position: relative; overflow: hidden; }
+.project-featured .project-visual { min-height: 560px; }
+.visual-lilac { background: var(--lilac); }
+.visual-peach { background: var(--peach); }
+.visual-mint { background: var(--mint); }
+.visual-index { position: absolute; left: 1.3rem; top: 1.2rem; font-size: .75rem; font-weight: 700; color: rgba(36,34,56,.55); }
+.weather-mark { position: absolute; right: 16%; top: 21%; width: 150px; height: 150px; display: grid; place-items: center; border-radius: 50%; background: #fff7c5; color: #eea938; font-size: 5rem; box-shadow: 24px 24px 0 rgba(104,70,216,.08); }
+.visual-caption { position: absolute; bottom: 13%; left: 13%; color: var(--muted); font-size: .8rem; }
+.visual-caption strong { font: 800 3.5rem/1 var(--font-display); color: var(--ink); }
+.task-card, .recipe-card { width: min(70%, 340px); border-radius: 14px; background: rgba(255,255,255,.86); padding: 1.2rem; box-shadow: 0 18px 45px rgba(67,43,58,.08); }
+.task-card { display: flex; align-items: center; gap: .7rem; font-size: .9rem; font-weight: 700; }
+.check { display: grid; place-items: center; width: 25px; height: 25px; flex: 0 0 25px; border-radius: 50%; color: #fff; background: #55b792; }
+.task-line { width: 36px; height: 4px; margin-left: auto; border-radius: 4px; background: #f0d1bf; }
+.recipe-card { display: flex; flex-direction: column; gap: .45rem; font-size: .68rem; letter-spacing: .1em; color: var(--muted); }
+.recipe-card strong { color: var(--ink); font: 700 1.2rem var(--font-display); letter-spacing: -.03em; }
+.recipe-photo { width: 100%; height: 90px; border-radius: 9px; background: linear-gradient(140deg, #f8d580 0 35%, #e6a78e 36% 60%, #9bc7a8 61%); }
+.recipe-line { height: 5px; width: 70%; border-radius: 8px; background: #e7e4ec; }
+.project-meta { display: flex; justify-content: space-between; margin-top: 1.1rem; font-size: .64rem; letter-spacing: .08em; }
+.project-card h3 { margin: .55rem 0 .25rem; font-size: 1.45rem; letter-spacing: -.04em; }
+.project-card > p { max-width: 400px; margin-bottom: .8rem; color: var(--muted); font-size: .9rem; }
+.project-link { color: var(--brand); }
+.contact { background: var(--ink); color: #fff; display: grid; grid-template-columns: .55fr 1.45fr; gap: 2rem; }
+.contact .section-label { color: #bcb8cc; }
+.contact-content h2 { margin-bottom: 2.2rem; }
+.contact-content .muted { color: #878396; }
+.contact-email { display: inline-flex; gap: 1rem; align-items: center; padding-bottom: .45rem; border-bottom: 1px solid #6f6b7d; font-size: clamp(1.2rem, 2.5vw, 2rem); font-weight: 600; }
+.social-links { display: flex; gap: 1.5rem; margin-top: 2rem; color: #c5c2cf; font-size: .85rem; }
+.site-footer { color: var(--muted); font-size: .78rem; }
+.site-footer p { margin: 0; }
+
+@media (min-width: 1200px) {
+  .hero { min-height: 690px; }
+}
+@media (max-width: 760px) {
+  .site-header, .site-footer { padding: 1.1rem 1.25rem; }
+  nav { gap: 1.1rem; font-size: .8rem; }
+  .hero { min-height: 600px; padding: 5rem 1.25rem 1.5rem; }
+  .hero::after { width: 210px; height: 210px; right: -70px; top: 12%; }
+  .hero-note { margin-top: 5rem; }
+  .section-shell { padding: 4.5rem 1.25rem; }
+  .about-content { grid-template-columns: 1fr; gap: 1.8rem; margin-top: 2rem; }
+  .projects-heading { align-items: start; flex-direction: column; margin-top: 2rem; }
+  .projects-heading > p { max-width: 420px; }
+  .project-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .project-featured { grid-row: auto; }
+  .project-featured .project-visual { min-height: 350px; }
+  .project-visual { min-height: 280px; }
+  .contact { grid-template-columns: 1fr; gap: 2rem; }
+  .contact-content h2 { margin-bottom: 1.7rem; }
+  .site-footer { gap: 1rem; }
+}
+@media (max-width: 420px) {
+  nav { gap: .8rem; }
+  .nav-contact { display: none; }
+  .hero-actions { gap: 1rem; align-items: flex-start; flex-direction: column; }
+  .site-footer p { display: none; }
+  .weather-mark { width: 118px; height: 118px; font-size: 4rem; }
+}
